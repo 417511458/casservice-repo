@@ -1,0 +1,56 @@
+{
+  @class: org.apereo.cas.services.RegexRegisteredService
+  serviceId: http://www.test.com
+  name: test
+  id: 1575277769061
+  description: 测试服务
+  expirationPolicy:
+  {
+    @class: org.apereo.cas.services.DefaultRegisteredServiceExpirationPolicy
+    deleteWhenExpired: false
+    notifyWhenDeleted: false
+  }
+  proxyPolicy:
+  {
+    @class: org.apereo.cas.services.RefuseRegisteredServiceProxyPolicy
+  }
+  evaluationOrder: 0
+  usernameAttributeProvider:
+  {
+    @class: org.apereo.cas.services.DefaultRegisteredServiceUsernameProvider
+    canonicalizationMode: NONE
+    encryptUsername: false
+  }
+  logoutType: BACK_CHANNEL
+  attributeReleasePolicy:
+  {
+    @class: org.apereo.cas.services.DenyAllAttributeReleasePolicy
+    principalAttributesRepository:
+    {
+      @class: org.apereo.cas.authentication.principal.DefaultPrincipalAttributesRepository
+      expiration: 0
+    }
+    consentPolicy:
+    {
+      @class: org.apereo.cas.services.consent.DefaultRegisteredServiceConsentPolicy
+      enabled: true
+    }
+    authorizedToReleaseCredentialPassword: false
+    authorizedToReleaseProxyGrantingTicket: false
+    excludeDefaultAttributes: true
+    authorizedToReleaseAuthenticationAttributes: false
+  }
+  accessStrategy:
+  {
+    @class: org.apereo.cas.services.DefaultRegisteredServiceAccessStrategy
+    order: 0
+    enabled: true
+    ssoEnabled: true
+    delegatedAuthenticationPolicy:
+    {
+      @class: org.apereo.cas.services.DefaultRegisteredServiceDelegatedAuthenticationPolicy
+    }
+    requireAllAttributes: true
+    caseInsensitive: false
+  }
+}
