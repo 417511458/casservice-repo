@@ -1,6 +1,6 @@
 {
   @class: org.apereo.cas.services.RegexRegisteredService
-  serviceId: http://www.test.com
+  serviceId: http://www.test22.com
   name: test
   id: 1575277769061
   description: 测试服务
@@ -29,6 +29,7 @@
     {
       @class: org.apereo.cas.authentication.principal.DefaultPrincipalAttributesRepository
       expiration: 0
+      timeUnit: HOURS
     }
     consentPolicy:
     {
@@ -39,6 +40,12 @@
     authorizedToReleaseProxyGrantingTicket: false
     excludeDefaultAttributes: true
     authorizedToReleaseAuthenticationAttributes: false
+  }
+  multifactorPolicy:
+  {
+    @class: org.apereo.cas.services.DefaultRegisteredServiceMultifactorPolicy
+    failureMode: UNDEFINED
+    bypassEnabled: false
   }
   accessStrategy:
   {
