@@ -1,6 +1,6 @@
 {
   @class: org.apereo.cas.services.RegexRegisteredService
-  serviceId: http://www.test333.com
+  serviceId: http://www.test33.com
   name: test
   id: 1575277769061
   description: 测试服务
